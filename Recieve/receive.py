@@ -7,11 +7,11 @@ import paho.mqtt.publish as publish
 import tkinter as tk
 import tkinter.font as font
 from tkinter.ttk import *
-
+import plot
 Topic =""
 Server =""
 client = mqtt.Client()
-
+Temp_list = []
 # what happens when connect
 def on_connect(client, userdata, flags, rc):
     '''
@@ -32,8 +32,11 @@ def on_message(client, userdata, msg):
         client : object
         msg    : message recived (object)
     '''
-    messagesArea['text'] += msg.topic + " ==> " + str(msg.payload)+"\n"
-
+    messagesArea['text'] += msg.topic + " ==> " + str(msg.payload)[2:-1]+"\n"
+    try:
+        Temp_list.append(float(str(msg.payload)[2:-1]))
+    except:
+        pass
 
 
 def Connect():
@@ -58,6 +61,7 @@ def clear():
     en1.delete(0, "end")
     en2.delete(0, "end")
     messagesArea['text'] = " "
+    Temp_list = []
 
 
 def Default():
@@ -66,10 +70,12 @@ def Default():
     en2.insert(END, "Topic/IoT/1/")
     messagesArea['text'] = " "
 
+def plotdata():
+    plot.plotData(Temp_list)
 
 window = tk.Tk()
 window.title("Publisher")
-window.geometry("500x300")
+window.geometry("600x300")
 
 
 title = tk.Label(window, text="Receive", fg="red",
@@ -105,6 +111,8 @@ clearbt = tk.Button(window, text="clear", command=clear,
                     bg="#33A7FF", height=buttonsHeight, width=buttonsWidth)
 defaultbt = tk.Button(window, text="Default", command=Default,
                       bg="#FFC733", height=buttonsHeight, width=buttonsWidth)
+plotbt = tk.Button(window, text="Plot", command=plotdata,
+                      bg="#4caf50", height=buttonsHeight, width=buttonsWidth)
 connectbt['font'] = closebt['font'] = clearbt['font'] = defaultbt['font'] = bottonsFont
 
 messagesArea = tk.Label(window, height=10, width=30)
@@ -126,6 +134,8 @@ closebt.grid(row=rowSpan+8, column=5, columnspan=columnSpan, rowspan=rowSpan+2)
 clearbt.grid(row=rowSpan+8, column=9, columnspan=columnSpan, rowspan=rowSpan+2)
 defaultbt.grid(row=rowSpan+8, column=13,
                columnspan=columnSpan, rowspan=rowSpan+2)
+plotbt.grid(row=rowSpan+8, column=17,
+            columnspan=columnSpan, rowspan=rowSpan+2)
 connectionInfoArea.grid(row=15, column=0, columnspan=20, rowspan=1)
 messagesArea.grid(row=17,column=0,columnspan=20,rowspan = 20)
 window.mainloop()
