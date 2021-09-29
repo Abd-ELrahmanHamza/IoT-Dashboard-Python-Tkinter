@@ -72,7 +72,7 @@ window.title("Publisher")
 window.geometry("500x300")
 
 
-title = tk.Label(window, text="Recieve", fg="red",
+title = tk.Label(window, text="Receive", fg="red",
                  font=("Helvetica", 20, "bold"), width=30)
 title.grid(row=0, column=0, columnspan=20, rowspan=2)
 
