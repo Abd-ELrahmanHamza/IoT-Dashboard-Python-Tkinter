@@ -34,10 +34,7 @@ window = tk.Tk()
 window.title("Publisher")
 window.geometry("500x300")
 
-# img = tk.PhotoImage(file="PNG_transparency_demonstration_1.png")
-# img1 = img.subsample(5, 5)
-# lbl4 = tk.Label(window, image=img1)
-# lbl4.grid(row=2, column=5, columnspan=2, rowspan=1)
+
 title = tk.Label(window, text="Send", fg="red",
                  font=("Helvetica", 20, "bold"), width=30)
 title.grid(row=0, column=0, columnspan=20, rowspan=2)
