@@ -4,7 +4,7 @@ Two IoT clients one is used to send and the other to receive provided with GUI, 
 
 ## Send
 
-![send](Images\send.png)
+![send](Images/send.png)
 
 ### Default button 
 Fills default values which are: -
@@ -14,7 +14,7 @@ Fills default values which are: -
 | Server| broker.mqttdashboard.com|
 | Topic|Topic/IoT/1/|
 | Message|Default messages|
-![send2](Images\send2.png)
+![send2](Images/send2.png)
 
 ### Clear button
 Reset values of Entries
@@ -27,7 +27,7 @@ sends the message
 
 ## Receive
 
-![receive](Images\Receive1.png)
+![receive](Images/Receive1.png)
 
 ### Default button
 Fills default values which are: -
@@ -37,7 +37,7 @@ Fills default values which are: -
 | Server| broker.mqttdashboard.com|
 | Topic|Topic/IoT/1/|
 
-![receive](Images\Receive2.png)
+![receive](Images/Receive2.png)
 
 ### Clear button
 Reset values of Entries
