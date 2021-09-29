@@ -1,6 +1,6 @@
 # IoT Dashboard
 
-Two IoT clients one is used to send and the other to receive provided with GUI, coded in python using tkinter.
+Two IoT clients one is used to send and the other to receive provided with GUI, coded in python using tkinter, paho and matplotlib.
 
 ## Send
 
