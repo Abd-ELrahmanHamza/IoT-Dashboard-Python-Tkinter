@@ -14,6 +14,7 @@ Fills default values which are: -
 | Server| broker.mqttdashboard.com|
 | Topic|Topic/IoT/1/|
 | Message|Default messages|
+
 ![send2](Images/send2.png)
 
 ### Clear button
