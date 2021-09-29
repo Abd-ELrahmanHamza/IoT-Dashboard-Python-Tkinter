@@ -26,7 +26,7 @@ def clear():
 def Default():
     clear()
     en1.insert(END, 'broker.mqttdashboard.com')
-    en2.insert(END, "Topic")
+    en2.insert(END, "Topic/IoT/1/")
     en3.insert(END, "Default messages")
 
 

@@ -2,9 +2,7 @@ import paho.mqtt.client as mqtt
 from time import sleep
 import os
 import cv2
-from mtcnn import MTCNN
 from tkinter.constants import END
-from typing import Text
 import paho.mqtt.publish as publish
 import tkinter as tk
 import tkinter.font as font
@@ -59,6 +57,7 @@ def close():
 def clear():
     en1.delete(0, "end")
     en2.delete(0, "end")
+    messagesArea['text'] = " "
 
 
 def Default():
